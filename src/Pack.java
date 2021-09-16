@@ -38,7 +38,7 @@ public class Pack {
         int num = p.arrArm.size();
         int i = r.nextInt(20);
         int j = r.nextInt(20);
-        System.out.println("i="+i);
+        System.out.println("i=" + i);
         p.arrArm.add(new Arm(num, i * l + 10, j * l));
         System.out.println("------\nGet a new Arm No." + num + "\n");
         System.out.println("Atk:" + (i * l + 10));
@@ -52,18 +52,19 @@ public class Pack {
     public ArrayList<Equip> getArrEquip() {
         return arrEquip;
     }
-    public void show() {
-        System.out.println("-------\nYour Arm") ;
-            for(int i = 0;i < arrArm.size();i++) {
 
-                System.out.println("-------\nArm No."+i);
-                System.out.println("Atk: "+arrArm.get(i).getAtk());
-            }
-        
+    public void show() {
+        System.out.println("-------\nYour Arm");
+        for (int i = 0; i < arrArm.size(); i++) {
+
+            System.out.println("-------\nArm No." + i);
+            System.out.println("Atk: " + arrArm.get(i).getAtk());
+        }
+
         System.out.println("-------\n Your Equip");
-        for(int i = 0;i<arrEquip.size();i++) {
-            System.out.println("-------\nEquip No."+i);
-            System.out.println("Type"+ arrEquip.get(i).getType()+"\nDef Is "+arrEquip.get(i).getDef());
+        for (int i = 0; i < arrEquip.size(); i++) {
+            System.out.println("-------\nEquip No." + i);
+            System.out.println("Type" + arrEquip.get(i).getType() + "\nDef Is " + arrEquip.get(i).getDef());
         }
     }
 }

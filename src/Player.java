@@ -12,26 +12,29 @@ public class Player extends Creature {
         hpmax = h;
         atk = at;
     }
+
     public double getatk(Pack p) {
-        return atk + (double)p.getArrArm().get(righthand).getAtk();
+        return atk + (double) p.getArrArm().get(righthand).getAtk();
     }
+
     public double getdef(Pack p) {
         double d = 0;
-        for(int i = 0; i < 4; i++) {
-            d +=(double)p.getArrEquip().get(use[i]).getDef();
+        for (int i = 0; i < 4; i++) {
+            d += (double) p.getArrEquip().get(use[i]).getDef();
         }
-        d+=def;
+        d += def;
         return d;
     }
-    public void show(double score,int level,Pack p) {
+
+    public void show(double score, int level, Pack p) {
         System.out.println("-------\nYour Name Is " + getName());
-        System.out.println("Lv."+level);
+        System.out.println("Lv." + level);
         System.out.println("Hp:" + getHp() + "/" + hpmax);
         System.out.println("YourScore is " + score);
         System.out.println("YourMedicine:" + getMedicine());
-        System.out.println("YourATK:" + getatk(p));  
-        System.out.println("YourDef:" + getdef(p));    
-        System.out.println("Righthand Use No."+righthand);
+        System.out.println("YourATK:" + getatk(p));
+        System.out.println("YourDef:" + getdef(p));
+        System.out.println("Righthand Use No." + righthand);
     }
 
     public int getMedicine() {
@@ -51,21 +54,21 @@ public class Player extends Creature {
     }
 
     public void useArm(int i, Pack p) {
-        if(i>p.getArrArm().size()) {
+        if (i > p.getArrArm().size()) {
             System.out.println("No Such Arm");
             return;
         }
         int pre = this.righthand;
         p.getArrArm().get(pre).setUsed(false);
         righthand = i;
-        System.out.println("Now use Arm No." +i);
+        System.out.println("Now use Arm No." + i);
         p.getArrArm().get(righthand).setUsed(true);
 
     }
 
     public void useEquip(int i, Pack p) {
-  //      System.out.println("debug");
-        if(i>p.getArrEquip().size()) {
+        // System.out.println("debug");
+        if (i > p.getArrEquip().size()) {
             System.out.println("No Such Equip");
             return;
         }
