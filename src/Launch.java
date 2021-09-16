@@ -1,6 +1,5 @@
 import java.util.Scanner;
 import java.util.Random;
-
 public class Launch {
     public static void main(String[] args) {
         int level = 1;
@@ -40,6 +39,19 @@ public class Launch {
                 }
                 if (2 <= saiZi && saiZi <= 4)
                     Pack.add(level, pack);
+                if(saiZi>=5) {
+                    Enemy enemy  = new Enemy("ene",10+r.nextInt(20)*level,10+r.nextInt(90)*level
+                    ,10+r.nextInt(40)*level);
+                    double cnt = enemy.getAtk()*enemy.getDef()*enemy.getHp();
+                    System.out.println("-------");
+                    System.out.println("!!!Meet An Enemy!!!");
+                    Battle.show(enemy);
+                   int round =  Battle.play(player,enemy,score,level,pack);
+                   if(player.getHp()<=0) break;
+                   score += (cnt)/round;
+                }
+                    
+                    
                 continue;
             }
             if (s.equals("arm")) {
