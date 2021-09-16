@@ -4,7 +4,9 @@ import javax.swing.plaf.metal.MetalBorders.ScrollPaneBorder;
 
 public class Launch {
     public static void main(String[] args) {
+        int level = 0;
         Random r = new Random();
+        Pack pack= new Pack();
         System.out.println("Enter Your Name");
         Scanner cin = new Scanner(System.in);
         String name = cin.nextLine();
@@ -32,11 +34,15 @@ public class Launch {
             }
             if(s.equals("go")) {
                 saiZi = r.nextInt(9);
-                if(0<=saiZi&&saiZi<=1) Fire.xiuXi(player);
-
+                if(0<=saiZi&&saiZi<=1) {
+                    Fire.xiuXi(player);
+                    level++;
+                }
+                if(2<=saiZi&&saiZi<=4) Pack.add(level);
+                continue;
             }
             System.out.println("-------\nNo Such Command\nPlease Check The Game tutorial");
-            System.out.println("Enter help to Check\n-------");    
+            System.out.println("Enter help to Check\n");    
         } while (player.getHp() > 0);
         System.out.println("-------\nYou Died");
         System.out.print("-------\nYour Score Is " + score);
