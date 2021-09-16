@@ -8,5 +8,5 @@
 - V0.4 增加敌人，战斗系统
 - V1.0 增加自定义难度，修了一些bug
 ## 教程
-[教程链接]([.\How_to_play.md](https://github.com/Malelk/MySoul/blob/master/How_to_Play.md))
+[教程链接](https://github.com/Malelk/MySoul/blob/master/How_to_Play.md)
 
