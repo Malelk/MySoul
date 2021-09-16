@@ -1,6 +1,5 @@
-import java.util.Scanner;
-import java.util.Random;
-
+import java.util.*;
+import java.lang.*;
 public class Launch {
     public static void main(String[] args) {
         int level = 1;
